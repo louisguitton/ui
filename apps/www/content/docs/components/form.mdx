@@ -106,12 +106,13 @@ const formSchema = z.object({
 
 Use the `useForm` hook from `react-hook-form` to create a form.
 
-```tsx showLineNumbers {4,14-20,22-27}
+```tsx showLineNumbers {4,6,15-21,23-28}
 "use client"
 
 import Link from "next/link"
 import { zodResolver } from "@hookform/resolvers/zod"
 import * as z from "zod"
+import { useForm } from "react-hook-form"
 
 const formSchema = z.object({
   username: z.string().min(2, {
@@ -143,12 +144,13 @@ Since `FormField` is using a controlled component, you need to provide a default
 
 We can now use the `<Form />` components to build our form.
 
-```tsx showLineNumbers {7-17,28-50}
+```tsx showLineNumbers {8-18,29-51}
 "use client"
 
 import Link from "next/link"
 import { zodResolver } from "@hookform/resolvers/zod"
 import * as z from "zod"
+import { useForm } from "react-hook-form"
 
 import { Button } from "@/components/ui/button"
 import {
